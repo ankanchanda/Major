@@ -1,9 +1,11 @@
 package com.example.majormajor
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -76,5 +78,15 @@ class DashboardActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.hiText).text= "HI $patientName !!"
         val quote = "You don’t have to control your thoughts. You just have to stop letting them control you."
         findViewById<TextView>(R.id.quoteText).text ="$quote — Dan Millman"
+        findViewById<MaterialButton>(R.id.module4).setOnClickListener {
+            startActivity(Intent(this, GroupChatActivity::class.java).apply {
+                putExtra("patientName", patientName)
+            })
+        }
+        findViewById<MaterialButton>(R.id.editProfileButton).setOnClickListener {
+            startActivity(Intent(this, EditProfileActivity::class.java).apply {
+                putExtra("userEmail", patientEmail)
+            })
+        }
     }
 }

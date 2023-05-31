@@ -4,6 +4,261 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#e6bd87"
     tools:context=".EditProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/personalDetailsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Personal Details"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/patientNameText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Name"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/personalDetailsText"
+                app:layout_constraintStart_toStartOf="@id/personalDetailsText"
+                app:layout_constraintTop_toBottomOf="@id/personalDetailsText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/patientNameEdit"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/patientPhoneText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Mobile Number"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/patientNameText"
+                app:layout_constraintStart_toStartOf="@id/patientNameText"
+                app:layout_constraintTop_toBottomOf="@id/patientNameText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:id="@+id/patientPhoneEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/patientEmailText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Email"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/patientPhoneText"
+                app:layout_constraintStart_toStartOf="@id/patientPhoneText"
+                app:layout_constraintTop_toBottomOf="@id/patientPhoneText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/patientEmailEdit"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/patientPasswordText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Password"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/patientEmailText"
+                app:layout_constraintStart_toStartOf="@id/patientEmailText"
+                app:layout_constraintTop_toBottomOf="@id/patientEmailText" >
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/pychiDetailsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Psychiatrist Details(Optional)"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/patientPasswordText"
+                app:layout_constraintEnd_toEndOf="@id/patientPasswordText"
+                app:layout_constraintStart_toStartOf="@id/patientPasswordText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/psychiNameText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Psyhiatrist Name"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/pychiDetailsText"
+                app:layout_constraintStart_toStartOf="@id/pychiDetailsText"
+                app:layout_constraintTop_toBottomOf="@id/pychiDetailsText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/psychiNameEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/psychiPhoneText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Psychiatrist Mobile Number"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/psychiNameText"
+                app:layout_constraintStart_toStartOf="@id/psychiNameText"
+                app:layout_constraintTop_toBottomOf="@id/psychiNameText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:id="@+id/psychiPhoneEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/psychiEmailText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Email"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/psychiPhoneText"
+                app:layout_constraintStart_toStartOf="@id/psychiPhoneText"
+                app:layout_constraintTop_toBottomOf="@id/psychiPhoneText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/psychiEmailEdit"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/emergencyDetailsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Emergency Details"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/psychiEmailText"
+                app:layout_constraintEnd_toEndOf="@id/psychiEmailText"
+                app:layout_constraintStart_toStartOf="@id/psychiEmailText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emergencyNameText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Name of Person"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/emergencyDetailsText"
+                app:layout_constraintStart_toStartOf="@id/emergencyDetailsText"
+                app:layout_constraintTop_toBottomOf="@id/emergencyDetailsText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emergencyNameEdit"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emergencyPhoneText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Mobile Number of Person"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/emergencyNameText"
+                app:layout_constraintStart_toStartOf="@id/emergencyNameText"
+                app:layout_constraintTop_toBottomOf="@id/emergencyNameText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:id="@+id/emergencyPhoneEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emergencyEmailText"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Email"
+                android:textStyle="bold"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/emergencyPhoneText"
+                app:layout_constraintStart_toStartOf="@id/emergencyPhoneText"
+                app:layout_constraintTop_toBottomOf="@id/emergencyPhoneText" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/emergencyEmailEdit"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/registerSubmitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:text="Update"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:cornerRadius="0dp"
+                android:layout_marginTop="25dp"
+                android:elevation="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/emergencyEmailText"
+                app:layout_constraintStart_toStartOf="@+id/emergencyEmailText"
+                app:layout_constraintTop_toBottomOf="@+id/emergencyEmailText"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

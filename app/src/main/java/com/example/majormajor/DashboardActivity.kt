@@ -79,7 +79,7 @@ class DashboardActivity : AppCompatActivity() {
         val quote = "You don’t have to control your thoughts. You just have to stop letting them control you."
         findViewById<TextView>(R.id.quoteText).text ="$quote — Dan Millman"
         findViewById<MaterialButton>(R.id.module4).setOnClickListener {
-            startActivity(Intent(this, GroupChatActivity::class.java).apply {
+            startActivity(Intent(this, GroupCChatActivity::class.java).apply {
                 putExtra("patientName", patientName)
             })
         }

@@ -12,6 +12,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/usersChatRecyclerView"
         android:layout_width="match_parent"
+        tools:listitem="@layout/item_userrow"
         android:layout_height="match_parent"
         android:layout_above="@id/lini_dummy">
 

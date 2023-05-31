@@ -50,15 +50,14 @@ public class GroupCChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_cchat);
 
-        Intent intent = getIntent();
-        receivedValue = intent.getStringExtra("patientName");
+
 
         recyclerView = findViewById(R.id.usersChatRecyclerView);
 
         database = FirebaseDatabase.getInstance();
         firebaseauth = FirebaseAuth.getInstance();
         checkBox = findViewById(R.id.usersChatCheckAnonymus);
-        RootRef = FirebaseDatabase.getInstance ().getReference ().child("chats").child(firebaseauth.getUid());
+        RootRef = FirebaseDatabase.getInstance ().getReference ().child("chats");
 
         sendButton = (ImageView) findViewById(R.id.sendButton);
         userInput = findViewById(R.id.usersChatEditText);
@@ -77,8 +76,12 @@ public class GroupCChatActivity extends AppCompatActivity {
     }
 
     private void clk() {
-        String message = userInput.getText().toString();
 
+
+        Intent intent = getIntent();
+        receivedValue = intent.getStringExtra("patientName");
+
+        String message = userInput.getText().toString();
         if (message.isEmpty()) {
             Toast.makeText(GroupCChatActivity.this, "Enter Any Text", Toast.LENGTH_SHORT).show();
             return;
@@ -96,7 +99,6 @@ public class GroupCChatActivity extends AppCompatActivity {
         Messages messages = new Messages(message, receivedValue, date.getTime());
 
         database.getReference().child("chats")
-                .child(firebaseauth.getUid())
                 .push().setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

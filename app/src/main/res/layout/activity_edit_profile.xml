@@ -80,6 +80,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:inputType="textEmailAddress"
                     android:id="@+id/patientEmailEdit"
+                    android:background="#C2C2C2"
+                    android:enabled="false"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -128,6 +130,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/psychiNameEdit"
                     android:layout_width="match_parent"
+                    android:textColor="@android:color/black"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
@@ -258,6 +261,7 @@
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </ScrollView>
 

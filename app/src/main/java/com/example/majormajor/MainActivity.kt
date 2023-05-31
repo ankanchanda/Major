@@ -5,9 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +27,25 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         findViewById<TextView>(R.id.clickableSignUpText).setOnClickListener {
             startActivity(Intent(this, Register::class.java))
+        }
+        findViewById<TextView>(R.id.forgetPassword).setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val inflater:LayoutInflater = layoutInflater
+            val dialogLayout: View = inflater.inflate(R.layout.forget_password_layout, null)
+            val emailAddress: EditText = dialogLayout.findViewById(R.id.resetPasswordEmail)
+            with(builder){
+                setTitle("Email to receive reset password link")
+                setPositiveButton("Reset Password") {dialog, which ->
+                    Firebase.auth.sendPasswordResetEmail(emailAddress.text.toString())
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Log.d(TAG, "Email sent.")
+                            }
+                        }
+                }
+                setView(dialogLayout)
+                show()
+            }
         }
         onClick()
     }

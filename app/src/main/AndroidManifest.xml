@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MajorMajor"
         tools:targetApi="31">
         <activity
+            android:name=".GroupCChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity

@@ -31,7 +31,7 @@
         android:id="@+id/lini_dummy"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:weightSum="3"
+        android:weightSum="5"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
@@ -40,7 +40,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="2">
 
             <CheckBox
                 android:id="@+id/usersChatCheckAnonymus"
@@ -51,9 +51,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:text="Send as Anonymous"/>
+                android:layout_height="42dp"
+                android:maxLines="2"
+                android:text="Send as   Anonymous"
+                android:textColor="@android:color/black" />
 
 
 
@@ -62,7 +63,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:weightSum="4"
             android:gravity="center_vertical"
             android:orientation="horizontal">

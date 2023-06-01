@@ -52,6 +52,8 @@
             android:layout_width="175px"
             android:layout_height="540px"
             android:layout_gravity="bottom"
+            android:text="+ve"
+            android:textSize="11sp"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/negative"
@@ -67,6 +69,8 @@
             android:backgroundTint="#C30A1F"
             app:cornerRadius="0dp"
             android:layout_marginLeft="20dp"
+            android:text="-ve"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/positive" />
 

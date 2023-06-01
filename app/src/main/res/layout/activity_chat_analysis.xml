@@ -5,6 +5,111 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:padding="20dp"
     tools:context=".ChatAnalysisActivity">
+
+    <TextView
+        android:id="@+id/chatanalysis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="CHAT ANALYSIS"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chartLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatanalysis"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:gravity="center"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/positive1"
+            android:layout_width="30dp"
+            android:layout_height="140dp"
+            android:layout_gravity="bottom"
+            android:text="+ve"
+            android:textSize="11sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/negative1"
+
+            android:backgroundTint="#2F872F"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/negative1"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#C30A1F"
+            app:cornerRadius="0dp"
+            android:text="-ve"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/positive1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/positive2"
+            android:layout_width="30dp"
+            android:layout_height="140dp"
+            android:layout_gravity="bottom"
+            android:text="+ve"
+            android:textSize="11sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/negative1"
+            android:layout_marginLeft="25dp"
+            android:backgroundTint="#2F872F"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/negative2"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#C30A1F"
+            app:cornerRadius="0dp"
+            android:text="-ve"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/positive2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/m28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="28MAY"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/chartLayout"
+        app:layout_constraintEnd_toStartOf="@id/m30"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/m30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30MAY"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/chartLayout"
+        app:layout_constraintStart_toEndOf="@id/m28"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

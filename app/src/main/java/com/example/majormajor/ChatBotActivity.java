@@ -50,7 +50,8 @@ public class ChatBotActivity extends AppCompatActivity {
             "How is your quality of sleep these days? (good or bad)",
             "Are you focused at work/college these days?",
             "Do you feel you spend enough time with your loved ones?",
-            "Do you have any hobbies or activities that bring you joy or relaxation?"
+            "Do you have any hobbies or activities that bring you joy or relaxation?",
+            "Thank You"
     };
 
     int question_no = 0;
@@ -129,7 +130,7 @@ public class ChatBotActivity extends AppCompatActivity {
         for(int i=0; i<100000; i++){
 
         }
-        String message = questions[(question_no++)%question_no];
+        String message = questions[question_no++];
         Date date = new Date();
 
         Messages messages = new Messages(message, "Bot", date.getTime());
@@ -143,6 +144,10 @@ public class ChatBotActivity extends AppCompatActivity {
 
                     }
                 });
+        if(question_no == 10){
+            Intent intent = new Intent(this, DashboardActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override

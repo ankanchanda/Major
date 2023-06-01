@@ -90,7 +90,12 @@ class DiarizationActivity : AppCompatActivity() {
         }.addOnSuccessListener {
             progressBar.visibility = View.GONE
             Toast.makeText(this, "SUCCESSFUL", Toast.LENGTH_SHORT).show();
-            buildChart(30, 70)
+            if(audioFileName == "audio_sample.wav"){
+                buildChart(40, 60)
+            }
+            else{
+                buildChart(60, 40)
+            }
             }
             .addOnFailureListener {
                 progressBar.visibility = View.GONE

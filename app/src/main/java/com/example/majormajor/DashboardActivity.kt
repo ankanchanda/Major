@@ -52,6 +52,13 @@ class DashboardActivity : AppCompatActivity() {
                 Log.d("LOGGER", "get failed with ", task.exception)
             }
         }
+
+        findViewById<MaterialButton>(R.id.module2).setOnClickListener {
+            startActivity(Intent(this, ChatAnalysisActivity::class.java))
+        }
+        findViewById<MaterialButton>(R.id.module3).setOnClickListener {
+            startActivity(Intent(this, DiarizationActivity::class.java))
+        }
     }
     fun handleData(
         patientName: String?,
@@ -86,6 +93,12 @@ class DashboardActivity : AppCompatActivity() {
         findViewById<MaterialButton>(R.id.editProfileButton).setOnClickListener {
             startActivity(Intent(this, EditProfileActivity::class.java).apply {
                 putExtra("userEmail", patientEmail)
+            })
+        }
+
+        findViewById<MaterialButton>(R.id.module1).setOnClickListener {
+            startActivity(Intent(this, ChatBotActivity::class.java).apply {
+                putExtra("patientName", patientName)
             })
         }
     }
